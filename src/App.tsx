@@ -1,13 +1,19 @@
 import { Github, Wand2 } from 'lucide-react'
-import { Button } from "./components/ui/button";
-import { Separator } from "./components/ui/separator";
-import { Textarea } from "./components/ui/textarea";
-import { Label } from "./components/ui/label";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "./components/ui/select";
-import { Slider } from "./components/ui/slider";
-import { VideoInputForm } from "./components/video-input-form";
-import { PromptSelect } from "./components/prompt-select";
-import { useState } from "react";
+import { Button } from './components/ui/button'
+import { Separator } from './components/ui/separator'
+import { Textarea } from './components/ui/textarea'
+import { Label } from './components/ui/label'
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from './components/ui/select'
+import { Slider } from './components/ui/slider'
+import { VideoInputForm } from './components/video-input-form'
+import { PromptSelect } from './components/prompt-select'
+import { useState } from 'react'
 import { useCompletion } from 'ai/react'
 
 export function App() {
@@ -29,7 +35,7 @@ export function App() {
     },
     headers: {
       'Content-Type': 'application/json',
-    }
+    },
   })
 
   return (
@@ -69,7 +75,10 @@ export function App() {
           </div>
 
           <p className="text-sm text-muted-foreground">
-            Lembre-se: você pode utilizar a variável <code className="text-violet-400">{`{transcription}`}</code> no seu prompt para adicionar o conteúdo da transcrição do vídeo selecionado.
+            Lembre-se: você pode utilizar a variável{' '}
+            <code className="text-violet-400">{`{transcription}`}</code> no seu
+            prompt para adicionar o conteúdo da transcrição do vídeo
+            selecionado.
           </p>
         </div>
 
@@ -108,10 +117,11 @@ export function App() {
                 max={1}
                 step={0.1}
                 value={[temperature]}
-                onValueChange={value => setTemperature(value[0])}
+                onValueChange={(value) => setTemperature(value[0])}
               />
               <span className="block text-sm text-muted-foreground italic leading-relaxed">
-                Valores mais altor tendem a deixar o resultado mais criativo e com possíveis erros.
+                Valores mais altor tendem a deixar o resultado mais criativo e
+                com possíveis erros.
               </span>
             </div>
 
